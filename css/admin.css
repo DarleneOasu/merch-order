@@ -136,5 +136,14 @@ table tr td{
 }
 
 
+/*LOGIN*/
+
+.login{
+    width: 20%;
+    border: 1px solid gray;
+    margin: 5% auto;
+    padding: 2%;
+}
+
 
 
