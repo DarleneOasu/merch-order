@@ -91,6 +91,11 @@ table tr td{
     color: #ff4757
 }
 
+.primary{
+    color: #ff6b81;
+
+}
+
 /* MENU*/
 .menu{
     border-bottom: 1px solid gray;
