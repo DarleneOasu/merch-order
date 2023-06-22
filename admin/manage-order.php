@@ -66,7 +66,6 @@
                                             echo "<label style='color: red;'>$status</label>";
                                         }
                                      ?>
-
                                 </td>
                                 <td><?php echo  $order_date ?></td>
                                 <td><?php echo $customer_name ?></td>
