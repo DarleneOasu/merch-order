@@ -35,6 +35,16 @@
     color: white;
 }
 
+.text-black{
+    color: black;
+}
+
+.text-box-black{
+    border: 1px solid black;
+    background-color: black;
+    padding: 2px;
+}
+
 .clearfix{
     clear: both;
     float: none;
