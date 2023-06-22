@@ -10,6 +10,15 @@
     padding: 0 0;
     font-family: Arial, Helvetica, sans-serif;
 }
+.success{
+    padding: 2%;
+    color: #2ed573;
+}
+
+.error{
+    padding: 2%;
+    color: #ff4757;
+}
 .container{
     width: 80%;
     margin: 0 auto;
@@ -37,6 +46,7 @@
 
 .text-black{
     color: black;
+    text-align:center;
 }
 
 .text-box-black{
@@ -266,4 +276,5 @@ fieldset{
     .order{
         width: 100%;
     }
+    
 }
