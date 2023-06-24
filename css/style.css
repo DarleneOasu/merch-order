@@ -5,10 +5,16 @@
 */
 
 /* CSS for All */
+
+@font-face {
+    font-family: formula-font;
+    src: url(Formula1-Regular.ttf);
+}
+
 *{
     margin: 0 0;
     padding: 0 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: formula-font;
 }
 .success{
     padding: 2%;
@@ -75,13 +81,13 @@ a:hover{
     border-radius: 5px;
 }
 .btn-primary{
-    background-color: #ff6b81;
+    background-color: gray;
     color: white;
     cursor: pointer;
 }
 .btn-primary:hover{
     color: white;
-    background-color: #ff4757;
+    background-color: black;
 }
 h2{
     color: #2f3542;
