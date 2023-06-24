@@ -1,14 +1,17 @@
 <?php include('partials-front/menu.php') ?>
 
     <section class="merch-search text-center">
-        <div class="container">
-        <?php
+        <div class="mlur">
 
-        $search = $_POST['search'];
-        ?>
-            
-            <h2>You have searched: <a href="#" class="text-white">"<?php echo $search?>"</a></h2>
+            <div class="container">
+            <?php
 
+            $search = $_POST['search'];
+            ?>
+                
+                <h2 class="text-white">You have searched: <a href="#" class="text-grey">"<?php echo $search?>"</a></h2>
+
+            </div>
         </div>
     </section>
 

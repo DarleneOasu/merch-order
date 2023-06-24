@@ -13,11 +13,14 @@
     }
 ?>
     <section class="merch-search text-center">
+    <div class="mlur">
+
         <div class="container">
             
             <h2>Merch on <a href="#" class="text-white">"<?php echo $category_title ?>"</a></h2>
 
         </div>
+    </div>
     </section>
 
     <section class="merch-menu">
@@ -38,7 +41,6 @@
                     $price = $row2['price'];
                     $image_name = $row2['image_name'];
                     $active = $row2['active'];
-                }
                ?>
                <div class="merch-menu-box">
                    <div class="merch-menu-img">
@@ -65,6 +67,7 @@
                </div>
            </div>
             <?php
+                }
             }else{
                 echo "<div class='error'>Merch not Avaliable.</div>";
             }

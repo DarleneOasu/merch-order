@@ -93,7 +93,7 @@
 
          $id = $_POST['id'];
          $title = $_POST['title'];
-         $current_image = $_POST['image_name'];
+         $current_image = $_POST['current_image'];
          $featured = $_POST['featured'];
          $active = $_POST['active'];
 

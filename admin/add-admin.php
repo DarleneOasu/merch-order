@@ -1,4 +1,3 @@
-<!-- add an admin with details and save in database-->
 <?php include('partials/menu.php'); ?>
 
 
@@ -8,9 +7,9 @@
 
         <br><br>
         <?php 
-            if (isset($_SESSION['add'])){ //Check whether the session is set or not
-                echo $_SESSION['add'];  //Dislplay session message
-                unset ($_SESSION['add']); //Remove session message
+            if (isset($_SESSION['add'])){ 
+                echo $_SESSION['add'];  
+                unset ($_SESSION['add']); 
             }
         ?>
         <form action="" method="POST">
@@ -47,42 +46,26 @@
 <?php include('partials/footer.php'); ?>
 
 <?php
-    //process the value from form and save it in our database
-    //check whether the submit button is clicked or not
 
     if(isset($_POST['submit'])){
 
-        //Button Clicked
-        //echo "Button Clicked";
-
-        //1.Get the data from form
         $full_name = $_POST['full_name'];
         $username = $_POST['username'];
-        $password = md5($_POST['password']); //Password Encryption with MD5
-
-        //2.SQL Query to Save the date into database
+        $password = md5($_POST['password']); 
         $sql = "INSERT INTO tbl_admin SET
             full_name = '$full_name',
             username = '$username',
             password = '$password'
         ";
 
-        //3. Execure Query and Save Data in Database 
         $res = mysqli_query($conn, $sql) or die(mysqli_error($con));
 
-        //4. Check whether the (Query is Executed)data is inserted or not and display appropriate message
         if($res == TRUE){
-            //echo "Data inserted";
-            //Create a variable to display a message
-            $_SESSION['add']="Admin Added Successfully";
-            //Redirect page manage admin
+            $_SESSION['add']="<div class='success'>Admin Added Successfully</div>";
             header("location:".SITEURL.'admin/manage-admin.php');
         }
         else{
-            //echo "Data not inserted";
-            //Create a variable to display a message
-            $_SESSION['add']="Faild to Add Admin";
-            //Redirect page add admin
+            $_SESSION['add']="<div class='error'>Faild to Add Admin</div>";
             header("location:".SITEURL.'admin/add-admin.php');
         }
     }

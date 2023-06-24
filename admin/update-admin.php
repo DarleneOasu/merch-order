@@ -6,23 +6,15 @@
       <br><br>
 
       <?php
-         //Get the ID of the Selected Admin
          $id=$_GET['id'];
 
-         //Creat SQL Query to Get the Details
          $sql = "SELECT * FROM tbl_admin WHERE id=$id";
 
-         //Execute the Query
          $res=mysqli_query($conn, $sql);
 
-         //Check whether the query is executer or not
          if($res == true){
-            //Check whether the data is avaliable or not
             $count = mysqli_num_rows($res);
-            //Check whether we have admin data or not
             if($count == 1){
-               //Get the Details
-               //echo "Admin Avaliable";
                $row = mysqli_fetch_assoc($res);
 
                $full_name = $row['full_name'];
@@ -67,35 +59,27 @@
 <?php 
 
   
-   //Check if the Submit button is Clicked or not
    if(isset($_POST['submit']))
    {
-      //echo "Button Clicked";
-      //Get all the values from the form to update
       $id = $_POST['id'];
       $full_name= $_POST['full_name'];
       $username = $_POST['username'];
 
-      //Create a SQL Query to Update Admin
       $sql ="UPDATE tbl_admin SET
       full_name = '$full_name',
       username = '$username' 
       WHERE id='$id'
       ";
 
-      //Execute Query
       $res= mysqli_query($conn, $sql);
 
-      //Check if the Query Executed successfully or not
       if($res==true){
-         //Query Executed and Admin Updated
-         $_SESSION['update'] = " <div class = 'succes'>Admin Update Successfully </div>";
+         $_SESSION['update'] = "<div class='success'>Admin Update Successfully </div>";
          header('location:'.SITEURL.'admin/manage-admin.php');
       
       }
       else{
-         //Failed to Update Admin
-         $_SESSION['update'] = " <div class = 'succes'>Failed to Update Admin </div>";
+         $_SESSION['update'] = "<div class='error'>Failed to Update Admin </div>";
          header('location:'.SITEURL.'admin/manage-admin.php');
       }
    }

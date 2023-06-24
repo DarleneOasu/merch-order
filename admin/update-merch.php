@@ -103,7 +103,7 @@
             <tr>
                <td>New Image:</td>
                <td>
-                  <input type="file" name="image">
+                  <input type="file" name="image" value="new-image">
                </td>
             </tr>
             <tr>
@@ -141,8 +141,8 @@
          $title = $_POST['title'];
          $description = $_POST['description'];
          $price = $_POST['price'];
-         $category_id = $_POST['category'];
-         $current_image = $_POST['image_name'];
+         $category_id = $_POST['category_id'];
+         $current_image = $_POST['current_image'];
          $featured = $_POST['featured'];
          $active = $_POST['active'];
 

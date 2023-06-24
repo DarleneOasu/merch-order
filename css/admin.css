@@ -5,10 +5,15 @@
 */
 
 /* CSS for All */
+
+@font-face {
+    font-family: formula-font;
+    src: url(Formula1-Regular.ttf);
+}
 *{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: formula-font;
 }
 
 .clearfix{
@@ -47,7 +52,7 @@ table tr td{
 
 
 .btn-primary{
-    background-color: #1e90ff;
+    background-color: blue;
     padding: 1%;
     color:white;
     text-decoration: none;
@@ -55,11 +60,11 @@ table tr td{
 }
 
 .btn-primary:hover{
-    background-color: #3742fa;
+    background-color: rgb(97, 165, 188);
 }
 
 .btn-secondary{
-    background-color: #7bed9f;
+    background-color: #00c21d;
     padding: 1%;
     color:white;
     text-decoration: none;
@@ -68,11 +73,11 @@ table tr td{
 }
 
 .btn-secondary:hover{
-    background-color: #2ed573;
+    background-color: #7bed9f;
 }
 
 .btn-danger{
-    background-color: #ff6b81;
+    background-color: red;
     padding: 1%;
     color:white;
     text-decoration: none;
@@ -80,19 +85,19 @@ table tr td{
 }
 
 .btn-danger:hover{
-    background-color: #ff4757;
+    background-color: #C80000;
 }
 
 .success{
-    color: #2ed573
+    color: #00c21d;
 }
 
 .error{
-    color: #ff4757
+    color: red;
 }
 
 .primary{
-    color: #ff6b81;
+    color: gray;
 
 }
 
@@ -112,11 +117,11 @@ table tr td{
 .menu ul li a{
     text-decoration: none;
     font-weight: bold;
-    color: #ff6b81;
+    color: red;
 }
 
 .menu ul li a:hover{
-    color: #ff4757;
+    color: gray;
 }
 
 
@@ -136,13 +141,12 @@ table tr td{
 
 /* FOOTER */
 .footer{
-    background-color: #ff4757;
+    background-color: red;
     color: white;
 }
 
 
 /*LOGIN*/
-
 .login{
     width: 20%;
     border: 1px solid gray;

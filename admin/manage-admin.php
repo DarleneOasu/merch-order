@@ -57,28 +57,18 @@
                     </tr>
 
                     <?php 
-                        //Query to get all Admin
                         $sql = "SELECT * FROM tbl_admin";
                         $res = mysqli_query($conn, $sql);
 
-                        //Check whether the query is executed or not
                         if($res == TRUE){
-                            //Count rows to see if there is any data in database
-                            $count = mysqli_num_rows($res); //Function to get all the rows in database
+                            $count = mysqli_num_rows($res); 
                             $sn = 1;
-                            //Check the number of rows
                             if($count > 0){
-                                //we have data
                                 while ($rows=mysqli_fetch_assoc($res)){
-                                    //Using while loop to get all the data from database
-                                    //And while loop will run as long as we have data in database
 
-                                    //get individual data
                                     $id = $rows['id'];
                                     $full_name = $rows['full_name'];
                                     $username = $rows['username'];
-
-                                    //Display the Values n our Table
                                     ?>
 
                                     <tr>
@@ -96,7 +86,6 @@
                                 }
                             }
                             else{
-                                //we don't have data
                             }
                         }
                     ?>

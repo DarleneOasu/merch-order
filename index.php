@@ -1,15 +1,15 @@
 <?php include('partials-front/menu.php') ?>
 
-    <section class="merch-search text-center">
-        <div class="container">
-            
-            <form action="<?php echo SITEURL?>merch-search.php" method="POST">
-                <input type="search" name="search" placeholder="Search for Merch.." required>
-                <input type="submit" name="submit" value="Search" class="btn btn-primary">
-            </form>
+<section class="merch-search text-center">
+    <div class="container">
+        <form action="<?php echo SITEURL?>merch-search.php" method="POST">
+            <input type="search" name="search" placeholder="Search for Merch.." required>
+            <input type="submit" name="submit" value="Search" class="btn btn-search">
+        </form>
+    </div>
+</section>
 
-        </div>
-    </section>
+
     <?php
     if(isset($_SESSION['order']))
         {
@@ -37,7 +37,7 @@
                      $image_name = $row['image_name'];
                      $active = $row['active'];
                 ?>
-            <a href="<?php echo SITEURL?>/category-merch.php?category_id=<?php echo $id?>">
+            <a href="<?php echo SITEURL?>category-merch.php?category_id=<?php echo $id?>">
             <div class="box-3 float-container">
                 <?php
                     if($image_name == ""){
