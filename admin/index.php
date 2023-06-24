@@ -25,13 +25,13 @@
 
                 <div class="col-4 text-center">
                 <?php
-                        $sql2 = "SELECT * FROM tbl_food";
+                        $sql2 = "SELECT * FROM tbl_merch";
                         $res2  = mysqli_query($conn, $sql2);
                         $count2 = mysqli_num_rows($res2);
                     ?>
                     <h1><?php echo $count2?></h1>
                     <br>
-                    Foods
+                    Merch
                 </div>
 
                 <div class="col-4 text-center">

@@ -2,13 +2,13 @@
 
 <div class="main">
    <div class="wrapper">
-      <h1>Update Food</h1>
+      <h1>Update Merch</h1>
       <br><br>
 
       <?php
          $id=$_GET['id'];
 
-         $sql = "SELECT * FROM tbl_food WHERE id=$id";
+         $sql = "SELECT * FROM tbl_merch WHERE id=$id";
 
          $res=mysqli_query($conn, $sql);
 
@@ -26,8 +26,8 @@
                $active = $row['active'];
             }
             else{
-               $_SESSION['not-food-found'] = "<div class='error'>Food not found.</div>";
-               header('location:'.SITEURL.'admin/manage-food.php');
+               $_SESSION['not-merch-found'] = "<div class='error'>Merch not found.</div>";
+               header('location:'.SITEURL.'admin/manage-merch.php');
             }
          }
 
@@ -92,7 +92,7 @@
                      if($current_image != ""){
 
                         ?>
-                        <img src="<?php echo SITEURL; ?>images/food/<?php echo $current_image; ?>"width='100px'>
+                        <img src="<?php echo SITEURL; ?>images/merch/<?php echo $current_image; ?>"width='100px'>
                         <?php
                      }else{
                         echo "<div class='primary'>Image not found.</div>";
@@ -124,7 +124,7 @@
                <td colspan=2>
                <input type="hidden" name="id" value="<?php echo $id; ?>">
                <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
-               <input type="submit" name="submit" value="Update Food" class="btn-secondary">
+               <input type="submit" name="submit" value="Update Merch" class="btn-secondary">
                </td>
             </tr>
 
@@ -154,24 +154,24 @@
                $image_name = $_FILES['image']['name'];
 
                if($image_name !=""){
-                  $image_name = "Food_".rand(000,999).'.'.$ext;
+                  $image_name = "Merch_".rand(000,999).'.'.$ext;
 
                   $source_path = $_FILES['image']['tmp_name'];
-                  $destination_path = "../images/food/".$image_name;
+                  $destination_path = "../images/merch/".$image_name;
                   $upload = move_uploaded_file($source_path, $destination_path);
 
                   if($upload == false){
                      $_SESSION['upload'] = "<div class = 'error'>Failed to Upload Image.</div>";
-                     header('location:'.SITEURL.'admin/manage-food.php');
+                     header('location:'.SITEURL.'admin/manage-merch.php');
                      die();
                   }
                      if($current_image != ""){
-                        $remove_path="../images/food/".$current_image;
+                        $remove_path="../images/merch/".$current_image;
                         $remove=unlink($remove_path);
 
                         if($remove == false){
                            $_SESSION['failed-remove'] ="<div class = 'error'>Failed to Remove Current Image. </div>";
-                           header('location:'.SITEURL.'admin/manage-food.php');
+                           header('location:'.SITEURL.'admin/manage-merch.php');
                            die();
                         }
                   }
@@ -185,7 +185,7 @@
                $image_name = $current_image;
          }
     
-         $sql2 = "UPDATE tbl_food SET
+         $sql2 = "UPDATE tbl_merch SET
                title = '$title',
                image_name = '$image_name',
                featured = '$featured',
@@ -196,12 +196,12 @@
          $res2 = mysqli_query($conn, $sql2) or die(mysqli_error($con));
    
          if($res2 == TRUE){
-               $_SESSION['add']="<div class='success'>Food Updated Successfully</div>";
-               header("location:".SITEURL.'admin/manage-food.php');
+               $_SESSION['add']="<div class='success'>Merch Updated Successfully</div>";
+               header("location:".SITEURL.'admin/manage-merch.php');
          }
          else{
-               $_SESSION['add']="<div class='error'>Faild to Update Food</div>";
-               header("location:".SITEURL.'admin/manage-food.php');
+               $_SESSION['add']="<div class='error'>Faild to Update Merch</div>";
+               header("location:".SITEURL.'admin/manage-merch.php');
          }
 
         }

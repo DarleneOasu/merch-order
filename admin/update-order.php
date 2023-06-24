@@ -2,7 +2,7 @@
 
 <div class="main">
    <div class="wrapper">
-      <h1>Update Food</h1>
+      <h1>Update Merch</h1>
       <br><br>
 
       <?php
@@ -19,7 +19,7 @@
                   $row = mysqli_fetch_assoc($res);
 
                   $id = $row['id'];
-                  $food = $row['food'];
+                  $merch = $row['merch'];
                   $price = $row['price'];
                   $qty = $row['qty'];
                   $order_date = $row['order_date'];
@@ -30,7 +30,7 @@
                   $customer_address = $row['customer_address'];
                }
                else{
-                  $_SESSION['not-food-found'] = "<div class='error'>Food not found.</div>";
+                  $_SESSION['not-merch-found'] = "<div class='error'>Merch not found.</div>";
                   header('location:'.SITEURL.'admin/manage-order.php');
                }
             }
@@ -44,8 +44,8 @@
       
          <table class="tbl-30">
             <tr>
-               <td>Food Name:</td>
-               <td><b><?php echo $food ?></b></td>
+               <td>Merch Name:</td>
+               <td><b><?php echo $merch ?></b></td>
             </tr>
             <tr>
                <td>Price:</td>

@@ -3,7 +3,7 @@
 
 <div class="main">
     <div class="wrapper">
-        <h1>Add food</h1>
+        <h1>Add merch</h1>
 
         <br><br>
         <?php 
@@ -122,15 +122,15 @@
                 if($image_name !=""){
 
 
-                $image_name = "Food_".rand(000,999).'.'.$ext;
+                $image_name = "Merch_".rand(000,999).'.'.$ext;
 
                 $source_path = $_FILES['image']['tmp_name'];
-                $destination_path = "../images/food/".$image_name;
+                $destination_path = "../images/merch/".$image_name;
                 $upload = move_uploaded_file($source_path, $destination_path);
 
                 if($upload == false){
                     $_SESSION['upload'] = "<div class = 'error'>Failed to Upoad Image. </div>";
-                    header('location:'.SITEURL.'admin/add-food.php');
+                    header('location:'.SITEURL.'admin/add-merch.php');
                     die();
                 }
             }
@@ -149,7 +149,7 @@
             $active = 'No';
         }
 
-        $sql2 = "INSERT INTO tbl_food SET
+        $sql2 = "INSERT INTO tbl_merch SET
             title = '$title',
             description = '$description',
             price = $price,
@@ -162,12 +162,12 @@
         $res2 = mysqli_query($conn, $sql2) or die(mysqli_error($con));
 
         if($res2 == TRUE){
-            $_SESSION['add']="<div class='success'>Added Food Successfully</div>";
-            header("location:".SITEURL.'admin/manage-food.php');
+            $_SESSION['add']="<div class='success'>Added Merch Successfully</div>";
+            header("location:".SITEURL.'admin/manage-merch.php');
         }
         else{
-            $_SESSION['add']="<div class='error'>Faild to Add Food</div>";
-            header("location:".SITEURL.'admin/add-food.php');
+            $_SESSION['add']="<div class='error'>Faild to Add merch</div>";
+            header("location:".SITEURL.'admin/add-merch.php');
         }
     }
 ?>

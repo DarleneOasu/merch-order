@@ -14,7 +14,7 @@
                 <table class="tbl-full">
                     <tr>
                         <th>S.N.</th>
-                        <th>Food</th>
+                        <th>Merch</th>
                         <th>Price</th>
                         <th>Qty</th>
                         <th>Order Date</th>
@@ -36,7 +36,7 @@
                             while($row=mysqli_fetch_assoc($res))
                             {
                                 $id = $row['id'];
-                                $food = $row['food'];
+                                $merch = $row['merch'];
                                 $price = $row['price'];
                                 $qty = $row['qty'];
                                 $order_date = $row['order_date'];
@@ -48,7 +48,7 @@
                             ?>
                             <tr>
                                 <td><?php echo $sn++ ?></td>
-                                <td><?php echo $food ?></td>
+                                <td><?php echo $merch ?></td>
                                 <td><?php echo $price ?></td>
                                 <td><?php echo $qty ?></td>
                                 <td>

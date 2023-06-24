@@ -2,7 +2,7 @@
             <!---main -->
             <div class="main">
             <div class="wrapper">
-    	        <h1> Manage food </h1>
+    	        <h1> Manage merch </h1>
                 <br><br>
                 <?php
                     if(isset($_SESSION['add']))
@@ -42,14 +42,14 @@
                         unset($_SESSION['failed-remove']);
                     }
                                                         
-                    if(isset($_SESSION['not-food-found']))
+                    if(isset($_SESSION['not-merch-found']))
                     {
-                        echo $_SESSION['not-food-found'];
-                        unset($_SESSION['not-food-found']);
+                        echo $_SESSION['not-merch-found'];
+                        unset($_SESSION['not-merch-found']);
                     }
                 ?>
                 <br><br>
-                <a href="<?php echo SITEURL; ?>admin/add-food.php" class="btn-primary">Add food</a>
+                <a href="<?php echo SITEURL; ?>admin/add-merch.php" class="btn-primary">Add merch</a>
                 <br><br><br>
                 <table class="tbl-full">
                     <tr>
@@ -63,7 +63,7 @@
                     </tr>
                     <?php
 
-                        $sql = "SELECT * FROM tbl_food";
+                        $sql = "SELECT * FROM tbl_merch";
 
                         $res  = mysqli_query($conn, $sql);
 
@@ -88,7 +88,7 @@
                             <?php
                                 if($image_name != ""){
                                 ?>
-                                    <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name ?>"width=100px>
+                                    <img src="<?php echo SITEURL; ?>images/merch/<?php echo $image_name ?>"width=100px>
                                 <?php
                                 }else{
                                     echo "<div class='error'>Image not added.</div>";
@@ -99,8 +99,8 @@
                         <td><?php echo $featured ?></td>
                         <td><?php echo $active ?></td>
                         <td>
-                            <a href="<?php echo SITEURL; ?>admin/update-food.php?id=<?php echo $id ?>&image_name=<?php echo $image_name ?>" class="btn-secondary">Update Food</a>
-                            <a href="<?php echo SITEURL; ?>admin/delete-food.php?id=<?php echo $id ?>&image_name=<?php echo $image_name ?>" class="btn-danger">Delete Food</a>
+                            <a href="<?php echo SITEURL; ?>admin/update-merch.php?id=<?php echo $id ?>&image_name=<?php echo $image_name ?>" class="btn-secondary">Update Merch</a>
+                            <a href="<?php echo SITEURL; ?>admin/delete-merch.php?id=<?php echo $id ?>&image_name=<?php echo $image_name ?>" class="btn-danger">Delete Merch</a>
                         </td>
                     </tr>
                     <?php
@@ -108,7 +108,7 @@
                     }else{
                         ?>
                         <tr>
-                            <td colspan="6"><div class="error">No Food Added.</div></td>
+                            <td colspan="6"><div class="error">No Merch Added.</div></td>
                         </tr>
 
                         <?php
