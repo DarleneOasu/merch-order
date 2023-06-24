@@ -83,7 +83,7 @@
                      $price = $row['price'];
                      $image_name = $row['image_name'];
                      $active = $row['active'];
-                 }
+                 
                 ?>
                 <div class="merch-menu-box">
                     <div class="merch-menu-img">
@@ -110,6 +110,7 @@
                 </div>
             </div>
                 <?php
+                 }
                 }else{
                     echo "<div class='error'>Merch not Avaliable.</div>";
                 }
@@ -121,7 +122,7 @@
         </div>
 
         <p class="text-center">
-            <a href="#">See All Merch</a>
+            <a href="<?php SITEURL?>merch.php">See All Merch</a>
         </p>
     </section>
 

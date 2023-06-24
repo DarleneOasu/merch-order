@@ -58,7 +58,7 @@
             <tr>
                <td>Category:</td>
                <td>
-                  <select name="category">
+                  <select name="category_id">
                      <?php
                         $sql = "SELECT * FROM tbl_category
                         WHERE active='Yes'";
@@ -69,10 +69,11 @@
 
                      if($count > 0){
                         while($row=mysqli_fetch_assoc($res)){
+                           $status =  $category;
                            $category_id = $row['id'];
                            $category_title = $row['title'];
                         ?>
-                        <option value="<?php echo $category_id;?>"><?php echo $category_title;?></option>
+                        <option value="<?php echo $category_id;?> <?php if($status == $category_id) {echo "selected";} ?>"><?php echo $category_title;?></option>
                         <?php
                         }
 
@@ -187,7 +188,10 @@
     
          $sql2 = "UPDATE tbl_merch SET
                title = '$title',
+               description = '$description',
+               price = $price,
                image_name = '$image_name',
+               category_id = '$category_id',
                featured = '$featured',
                active = '$active'
                WHERE id=$id;

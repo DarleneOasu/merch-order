@@ -196,7 +196,8 @@ fieldset{
     padding: 4% 0;
 }
 .merch-menu-box{
-    width: 43%;
+    max-width: 43%;
+    min-width: 43%;
     margin: 1%;
     padding: 2%;
     float: left;
